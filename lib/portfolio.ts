@@ -7,7 +7,6 @@ export type Photo = {
 export type Series = {
   slug: string;
   title: string;
-  tagline: string;
   description: string;
   cover: Photo;
   images: Photo[];
@@ -28,7 +27,7 @@ export const beauty: Photo = {
 };
 
 export const character: Photo = {
-  src: '/images/realjoker1.png',
+  src: '/images/realjoker4.png',
   alt: 'Muiz holding a playing card in purple and green character styling',
 };
 
@@ -69,13 +68,11 @@ export const series: Series[] = [
   {
     slug: 'nigerian-heritage',
     title: 'Nigerian Heritage',
-    tagline: 'Culture. Tailoring. Presence.',
     description:
-      'Traditional silhouettes, intricate embroidery and a contemporary point of view. An exploration of Nigerian menswear in emerald, ivory and burgundy.',
+      'Traditional silhouettes, intricate embroidery and a contemporary point of view. ',
     cover: emerald,
     images: [
       emerald,
-      {src: '/images/realagbada2.png', alt: 'Muiz in a traditional Nigerian agbada, image 2'},
       {src: '/images/realagbada3.png', alt: 'Muiz in a traditional Nigerian agbada, image 3'},
       {src: '/images/realagbada4.png', alt: 'Muiz in a traditional Nigerian agbada, image 4'},
       {src: '/images/realagbada5.png', alt: 'Muiz in a traditional Nigerian agbada, image 5'},
@@ -85,9 +82,8 @@ export const series: Series[] = [
   {
     slug: 'beauty-grooming',
     title: 'Beauty & Grooming',
-    tagline: 'Skin. Expression. Confidence.',
     description:
-      'Close studies of skin, light and expression. A quieter visual language for beauty and grooming concepts.',
+      'Close studies of skin, light and expression.  ',
     cover: beauty,
     images: [
       beauty,
@@ -99,31 +95,33 @@ export const series: Series[] = [
   {
     slug: 'sport',
     title: 'Sport',
-    tagline: 'Movement. Discipline. Energy.',
     description:
       'Athletic presence, the open court and the last light of the day. A basketball concept exploring the meeting point of sport and style.',
     cover: sport,
     images: [
       sport,
-      {src: '/images/realsport2.png', alt: 'Muiz in athletic wear on an outdoor court, image 2'},
-      {src: '/images/realsport4.png', alt: 'Muiz in athletic wear on an outdoor court, image 4'},
-      {src: '/images/realsport5.png', alt: 'Muiz in athletic wear on an outdoor court, image 5'},
+
       {src: '/images/realsport6.png', alt: 'Muiz in athletic wear on an outdoor court, image 6'},
       {src: '/images/realsport7.png', alt: 'Muiz in athletic wear on an outdoor court, image 7'},
+
+      {src: '/images/realsport8.png', alt: 'Muiz in athletic wear on an outdoor court, image 8'},
+      {src: '/images/realsport9.png', alt: 'Muiz in athletic wear on an outdoor court, image 9'},
+            {src: '/images/realsport10.png', alt: 'Muiz in athletic wear on an outdoor court, image 10'},
+
     ],
   },
   {
     slug: 'character-studies',
     title: 'Character Studies',
-    tagline: 'Mood. Transformation. Story.',
     description:
-      'Expressive styling and cinematic character work. A self-directed exploration of colour, tension and persona.',
+      'Expressive styling and cinematic character work.  ',
      cover: character,
     images: [
       character,
-      {src: '/images/realjoker2.png', alt: 'Muiz in joker character study, image 2'},
+      {src: '/images/realjoker1.png', alt: 'Muiz in joker character study, image 2'},
+    {src: '/images/realjoker2.png', alt: 'Muiz in joker character study, image 2'},
       {src: '/images/realjoker3.png', alt: 'Muiz in joker character study, image 3'},
-      {src: '/images/realjoker4.png', alt: 'Muiz in joker character study, image 4'},
+
       {src: '/images/realjoker5.png', alt: 'Muiz in joker character study, image 5'},
       {src: '/images/realjoker6.png', alt: 'Muiz in joker character study, image 6'},
       {src: '/images/realjoker7.png', alt: 'Muiz in joker character study, image 7'},
@@ -134,9 +132,8 @@ export const series: Series[] = [
   {
     slug: 'fashion-editorial',
     title: 'Fashion & Editorial',
-    tagline: 'Tailoring. Attitude. Timeless.',
     description:
-      'Black tailoring, sculptural furniture and considered stillness. Editorial concepts built around presence, proportion and restraint.',
+      'Black tailoring, sculptural furniture and considered stillness.',
     cover: fashion,
     images: [
       fashion,

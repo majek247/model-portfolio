@@ -20,7 +20,7 @@ export default function Home() {
         <div className="hero-shade" />
         <div className="hero-copy">
           <p className="eyebrow">
-            Model · Selected portfolio
+            Model
           </p>
           <h1 id="hero-heading">
             Presence,
@@ -48,13 +48,9 @@ export default function Home() {
       >
         <div className="section-heading">
           <h2 className="eyebrow">
-            01 / Selected stories
+            01 / Work
           </h2>
-          <p>
-            A portfolio of tailoring, movement
-            <br />
-            and expressive character work.
-          </p>
+        
         </div>
         <div className="work-grid">
           {series.map((item, index) => (
@@ -67,7 +63,6 @@ export default function Home() {
               <div className="card-shade" />
               <div className="card-caption">
                 <h3>{item.title}</h3>
-                <p>{item.tagline}</p>
                 <span>
                   View series <span aria-hidden="true">↗</span>
                 </span>
@@ -81,26 +76,61 @@ export default function Home() {
         id="about"
         className="about shell"
       >
- 
-        <div className="about-content">
-          <div>
+        <div className="comp">
+          <div className="comp-left">
             <h2 className="eyebrow section-rule">
-              02 / About
+              02 / Profile
             </h2>
-            <p className="about-name">
+            <p className="comp-name">
               MUIZ
             </p>
-          </div>
-          <div className="about-copy">
-            <h3>
-              Fashion. Beauty. Movement. Character.
-            </h3>
-            <p>
-              {site.about}
+            <p className="comp-sub">
+              Portraits &amp; measurements
             </p>
-            <span className="eyebrow disclosure">
-              {site.disclosure}
-            </span>
+
+            <div className="comp-height">
+              <span className="comp-label">Height</span>
+              <strong>5’11”</strong>
+              <em>180 cm</em>
+            </div>
+
+            <div className="comp-row"><span>Eyes</span><span>Brown</span></div>
+               <div className="comp-row"><span>Chest</span><span>40” · 102 cm</span></div>
+            <div className="comp-row"><span>Waist</span><span>34” · 86 cm</span></div>    
+            <div className="comp-row"><span>Suit</span><span>40R</span></div>
+            <div className="comp-row"><span>Shoes</span><span>UK 9 · EU 43</span></div>
+
+          </div>
+
+          <div className="comp-right">
+            <h3 className="comp-title">Digitals.</h3>
+          <p className="comp-kicker">Current · Oct 2026</p>
+            <div className="comp-grid">
+              <figure>
+                <div className="comp-shot">
+                  <Photo photo={{ src: '/images/newcomp1.png', alt: 'Headshot of Muiz' }} />
+                </div>
+                <figcaption>01 / Headshot</figcaption>
+              </figure>
+              <figure>
+                <div className="comp-shot">
+                  <Photo photo={{ src: '/images/newcomp2.png', alt: 'Side profile of Muiz' }} />
+                </div>
+                <figcaption>02 / Side profile</figcaption>
+              </figure>
+              <figure>
+                <div className="comp-shot">
+                  <Photo photo={{ src: '/images/newcomp3.png', alt: 'Waist-up portrait of Muiz' }} />
+                </div>
+                <figcaption>03 / Waist-up</figcaption>
+              </figure>
+              <figure>
+                <div className="comp-shot">
+                  <Photo photo={{ src: '/images/newcomp4.png', alt: 'Full-length portrait of Muiz' }} />
+                </div>
+                <figcaption>04 / Full length</figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </section>
@@ -115,19 +145,42 @@ export default function Home() {
               03 / Booking
             </h2>
             <h3>
-              Make the
+              Have something
               <br />
-              next image.
+              in <em>mind?</em>
             </h3>
-            <p className="rate">
-              {site.rate}
+            <p className="lead">
+              Tell me what you’re making, where it’s happening
+              <br />
+              and when. I’d love to hear the idea.
             </p>
-            <p className="rate-note">
-              {site.rateNote}
-            </p>
-            <Availability />
+            <div className="booking-note">
+         <p className="eyebrow">Location and travel</p>
+              <h4>
+                Based in Nigeria.
+                <br />
+                Available for UK and international shoots.
+              </h4>
+            </div>
+            <div className="booking-fees">
+              <p className="rate">
+                {site.rate}
+              </p>
+              <p className="rate-note">
+                {site.rateNote}
+              </p>
+              <Availability />
+            </div>
           </div>
-          <BookingForm />
+          <div className="booking-right">
+            <h2 className="eyebrow section-rule">
+              01
+            </h2>
+            <h3 className="form-title">
+              Tell me about the project.
+            </h3>
+            <BookingForm />
+          </div>
         </div>
       </section>
 
