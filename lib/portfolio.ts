@@ -23,17 +23,17 @@ export const cat: Photo = {
 // x, y, width, height within the 684 × 2048 reference, excluding baked-in captions.
 
 export const beauty: Photo = {
-  src: '/images/skincare3.png',
+  src: '/images/realskin1.png',
   alt: 'Muiz in a close-up skincare portrait',
 };
 
 export const character: Photo = {
-  src: '/images/jokermodel1.png',
+  src: '/images/realjoker1.png',
   alt: 'Muiz holding a playing card in purple and green character styling',
 };
 
 export const fashion: Photo = {
-  src: '/images/chessmodel10.png',
+  src: '/images/chess1.png',
   alt: 'Muiz wearing black, seated at a chessboard',
 };
 
@@ -56,12 +56,12 @@ export const details: Photo[] = [
 ];
 
 const emerald: Photo = {
-  src: '/images/agbada1.png',
+  src: '/images/realagbada1.png',
   alt: 'Muiz in an embroidered emerald agbada and matching fila',
 };
 
 const sport: Photo = {
-  src: '/images/sport6.png',
+  src: '/images/realsport1.png',
   alt: 'Muiz holding a basketball on an outdoor court at sunset',
 };
 
@@ -75,11 +75,11 @@ export const series: Series[] = [
     cover: emerald,
     images: [
       emerald,
-      {src: '/images/agbada2.png', alt: 'Muiz in a traditional Nigerian agbada, image 2'},
-      {src: '/images/agbada3.png', alt: 'Muiz in a traditional Nigerian agbada, image 3'},
-      {src: '/images/agbdada4.png', alt: 'Muiz in a traditional Nigerian agbada, image 4'},
-      {src: '/images/agbada5.png', alt: 'Muiz in a traditional Nigerian agbada, image 5'},
-      {src: '/images/agbada6.png', alt: 'Muiz in a traditional Nigerian agbada, image 6'},
+      {src: '/images/realagbada2.png', alt: 'Muiz in a traditional Nigerian agbada, image 2'},
+      {src: '/images/realagbada3.png', alt: 'Muiz in a traditional Nigerian agbada, image 3'},
+      {src: '/images/realagbada4.png', alt: 'Muiz in a traditional Nigerian agbada, image 4'},
+      {src: '/images/realagbada5.png', alt: 'Muiz in a traditional Nigerian agbada, image 5'},
+      {src: '/images/realagbada6.png', alt: 'Muiz in a traditional Nigerian agbada, image 6'},
     ],
   },
   {
@@ -91,10 +91,9 @@ export const series: Series[] = [
     cover: beauty,
     images: [
       beauty,
-      {src: '/images/skincare1.png', alt: 'Muiz in a skincare and grooming portrait, image 1'},
-      {src: '/images/skincare2.png', alt: 'Muiz in a skincare and grooming portrait, image 2'},
-      {src: '/images/skincare4.png', alt: 'Muiz in a skincare and grooming portrait, image 4'},
-      {src: '/images/skincare5.png', alt: 'Muiz in a skincare and grooming portrait, image 5'},
+      {src: '/images/realskin2.png', alt: 'Muiz in a skincare and grooming portrait, image 2'},
+      {src: '/images/realskin3.png', alt: 'Muiz in a skincare and grooming portrait, image 3'},
+      {src: '/images/realskin4.png', alt: 'Muiz in a skincare and grooming portrait, image 4'},
     ],
   },
   {
@@ -106,15 +105,11 @@ export const series: Series[] = [
     cover: sport,
     images: [
       sport,
-      {src: '/images/sport1.png', alt: 'Muiz holding a basketball on an outdoor court, image 1'},
-      {src: '/images/sport2.png', alt: 'Muiz in athletic wear on an outdoor court, image 2'},
-      {src: '/images/sport3.png', alt: 'Muiz in athletic wear on an outdoor court, image 3'},
-      {src: '/images/sport4.png', alt: 'Muiz in athletic wear on an outdoor court, image 4'},
-      {src: '/images/sport5.png', alt: 'Muiz in athletic wear on an outdoor court, image 5'},
-      {src: '/images/sport7.png', alt: 'Muiz in athletic wear on an outdoor court, image 7'},
-      {src: '/images/sport8.png', alt: 'Muiz in athletic wear on an outdoor court, image 8'},
-      {src: '/images/sport9.png', alt: 'Muiz in athletic wear on an outdoor court, image 9'},
-      {src: '/images/sport10.png', alt: 'Muiz in athletic wear on an outdoor court, image 10'},
+      {src: '/images/realsport2.png', alt: 'Muiz in athletic wear on an outdoor court, image 2'},
+      {src: '/images/realsport4.png', alt: 'Muiz in athletic wear on an outdoor court, image 4'},
+      {src: '/images/realsport5.png', alt: 'Muiz in athletic wear on an outdoor court, image 5'},
+      {src: '/images/realsport6.png', alt: 'Muiz in athletic wear on an outdoor court, image 6'},
+      {src: '/images/realsport7.png', alt: 'Muiz in athletic wear on an outdoor court, image 7'},
     ],
   },
   {
@@ -126,14 +121,14 @@ export const series: Series[] = [
      cover: character,
     images: [
       character,
-      {src: '/images/joker3.png', alt: 'Muiz holding a burning joker card in character styling'},
-      {src: '/images/jokermodel1.png', alt: 'Muiz in joker character study, image 1'},
-      {src: '/images/jokermodel2.png', alt: 'Muiz in joker character study, image 2'},
-      {src: '/images/jokermodel4.png', alt: 'Muiz in joker character study, image 4'},
-      {src: '/images/jokermodel5.png', alt: 'Muiz in joker character study, image 5'},
-      {src: '/images/jokermodel6.png', alt: 'Muiz in joker character study, image 6'},
-      {src: '/images/jokermodel7.png', alt: 'Muiz in joker character study, image 7'},
-      {src: '/images/jokermodel8.png', alt: 'Muiz in joker character study, image 8'},
+      {src: '/images/realjoker2.png', alt: 'Muiz in joker character study, image 2'},
+      {src: '/images/realjoker3.png', alt: 'Muiz in joker character study, image 3'},
+      {src: '/images/realjoker4.png', alt: 'Muiz in joker character study, image 4'},
+      {src: '/images/realjoker5.png', alt: 'Muiz in joker character study, image 5'},
+      {src: '/images/realjoker6.png', alt: 'Muiz in joker character study, image 6'},
+      {src: '/images/realjoker7.png', alt: 'Muiz in joker character study, image 7'},
+      {src: '/images/realjoker8.png', alt: 'Muiz in joker character study, image 8'},
+      {src: '/images/realjoker9.png', alt: 'Muiz in joker character study, image 9'},
     ],
   },
   {
@@ -145,31 +140,22 @@ export const series: Series[] = [
     cover: fashion,
     images: [
       fashion,
-      {src: '/images/chessmodel1.png', alt: 'Muiz in black tailoring at a chessboard, image 1'},
-      {src: '/images/chessmodel2.png', alt: 'Muiz in black tailoring at a chessboard, image 2'},
-      {src: '/images/chessmodel3.png', alt: 'Muiz in black tailoring at a chessboard, image 3'},
-      {src: '/images/chessmodel4.png', alt: 'Muiz in black tailoring at a chessboard, image 4'},
-      {src: '/images/chessmodel5.png', alt: 'Muiz in black tailoring at a chessboard, image 5'},
-      {src: '/images/chessmodel6.png', alt: 'Muiz in black tailoring at a chessboard, image 6'},
-      {src: '/images/chessmodel7.png', alt: 'Muiz in black tailoring at a chessboard, image 7'},
-      {src: '/images/chessmodel8.png', alt: 'Muiz in black tailoring at a chessboard, image 8'},
-      {src: '/images/chessmodel9.png', alt: 'Muiz in black tailoring at a chessboard, image 9'},
-      {src: '/images/black-lad1.png', alt: 'Muiz in black tailoring, editorial portrait 1'},
-      {src: '/images/black-lad2.png', alt: 'Muiz in black tailoring, editorial portrait 2'},
-      {src: '/images/black-lad3.png', alt: 'Muiz in black tailoring, editorial portrait 3'},
-      {src: '/images/black-lad4.png', alt: 'Muiz in black tailoring, editorial portrait 4'},
-      {src: '/images/black-lad5.png', alt: 'Muiz in black tailoring, editorial portrait 5'},
-      {src: '/images/black-lad6.png', alt: 'Muiz in black tailoring, editorial portrait 6'},
-      {src: '/images/black-lad7.png', alt: 'Muiz in black tailoring, editorial portrait 7'},
-      {src: '/images/black-lad8.png', alt: 'Muiz in black tailoring, editorial portrait 8'},
-      {src: '/images/black-lad9.png', alt: 'Muiz in black tailoring, editorial portrait 9'},
-      {src: '/images/black-lad10.png', alt: 'Muiz in black tailoring, editorial portrait 10'},
-      {src: '/images/black-lad11.png', alt: 'Muiz in black tailoring, editorial portrait 11'},
-      {src: '/images/black-lad12.png', alt: 'Muiz in black tailoring, editorial portrait 12'},
-      {src: '/images/black-lad13.png', alt: 'Muiz in black tailoring, editorial portrait 13'},
-      {src: '/images/black-lad14.png', alt: 'Muiz in black tailoring, editorial portrait 14'},
-      {src: '/images/black-lad15.png', alt: 'Muiz in black tailoring, editorial portrait 15'},
-      {src: '/images/black-lad16.png', alt: 'Muiz in black tailoring, editorial portrait 16'},
+      {src: '/images/chess2.png', alt: 'Muiz in black tailoring at a chessboard, image 2'},
+      {src: '/images/chess3.png', alt: 'Muiz in black tailoring at a chessboard, image 3'},
+      {src: '/images/chess4.png', alt: 'Muiz in black tailoring at a chessboard, image 4'},
+      {src: '/images/chess5.png', alt: 'Muiz in black tailoring at a chessboard, image 5'},
+      {src: '/images/chess6.png', alt: 'Muiz in black tailoring at a chessboard, image 6'},
+      {src: '/images/chess7.png', alt: 'Muiz in black tailoring at a chessboard, image 7'},
+      {src: '/images/chess8.png', alt: 'Muiz in black tailoring at a chessboard, image 8'},
+      {src: '/images/chess9.png', alt: 'Muiz in black tailoring at a chessboard, image 9'},
+  {src: '/images/chess10.png', alt: 'Muiz in black tailoring at a chessboard, image 10'},
+      {src: '/images/blackcat1.png', alt: 'Muiz in black tailoring with a black cat, image 1'},
+      {src: '/images/blackcat2.png', alt: 'Muiz in black tailoring with a black cat, image 2'},
+      {src: '/images/blackcat3.png', alt: 'Muiz in black tailoring with a black cat, image 3'},
+      {src: '/images/blackcat4.png', alt: 'Muiz in black tailoring with a black cat, image 4'},
+      {src: '/images/blackcat5.png', alt: 'Muiz in black tailoring with a black cat, image 5'},
+      {src: '/images/blackcat6.png', alt: 'Muiz in black tailoring with a black cat, image 6'},
+      {src: '/images/blackcat7.png', alt: 'Muiz in black tailoring with a black cat, image 7'},
     ],
   },
 ];
