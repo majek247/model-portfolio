@@ -32,6 +32,39 @@ export default async function SeriesPage({
 
   if (!item) notFound();
 
+    if (item.collections) {
+    return (
+      <main id="main" className="shell inner">
+        <Link href="/#work" className="text-link">
+          ← All selected work
+        </Link>
+
+        <header className="page-heading">
+          <p className="eyebrow">Selected stories</p>
+          <h1>{item.title}</h1>
+          <p>{item.description}</p>
+        </header>
+
+        <div className="collection-grid">
+          {item.collections.map((c) => (
+            <Link
+              key={c.slug}
+              href={`/work/${item.slug}/${c.slug}`}
+              className="collection-card"
+            >
+              <div className="collection-card-photo">
+                <Photo photo={c.cover} />
+              </div>
+              <h2>{c.title}</h2>
+              <p>{c.description}</p>
+              <span>View {c.images.length} images ↗</span>
+            </Link>
+          ))}
+        </div>
+      </main>
+    );
+  }
+
   const next = series[(series.indexOf(item) + 1) % series.length];
 
   return (

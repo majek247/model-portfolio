@@ -4,12 +4,21 @@ export type Photo = {
   crop?: [number, number, number, number];
 };
 
+ export type Collection = {
+  slug: string;
+  title: string;
+  description: string;
+  cover: Photo;
+  images: Photo[];
+};
+
 export type Series = {
   slug: string;
   title: string;
   description: string;
   cover: Photo;
   images: Photo[];
+  collections?: Collection[];
 };
 
 export const cat: Photo = {
@@ -27,7 +36,7 @@ export const beauty: Photo = {
 };
 
 export const character: Photo = {
-  src: '/images/realjoker4.png',
+  src: '/images/latestjoker3.png',
   alt: 'Muiz holding a playing card in purple and green character styling',
 };
 
@@ -64,6 +73,30 @@ const sport: Photo = {
   alt: 'Muiz holding a basketball on an outdoor court at sunset',
 };
 
+
+
+const jokerImages: Photo[] = [
+  character,
+    {src: '/images/latestjoker1.png', alt: 'Muiz as the Joker, image 10'},
+      {src: '/images/realjoker9.png', alt: 'Muiz as the Joker, image 9'},
+      {src: '/images/realjoker2.png', alt: 'Muiz as the Joker, image 3'},
+        {src: '/images/realjoker7.png', alt: 'Muiz as the Joker, image 7'},
+      
+
+
+];
+
+const priestImages: Photo[] = [
+  {src: '/images/priest2.png', alt: 'Muiz as the Priest, image 2'},
+  {src: '/images/priest3.png', alt: 'Muiz as the Priest, image 3'},
+  {src: '/images/rebelpriest1.png', alt: 'Muiz as the Priest, image 4'},
+  {src: '/images/rebelpriest2.png', alt: 'Muiz as the Priest, image 5'},
+  {src: '/images/rebelpriest3.png', alt: 'Muiz as the Priest, image 6'},
+  {src: '/images/rebelpriest4.png', alt: 'Muiz as the Priest, image 7'},
+  {src: '/images/rebelpriest5.png', alt: 'Muiz as the Priest, image 8'},
+
+];
+
 export const series: Series[] = [
   {
     slug: 'nigerian-heritage',
@@ -96,39 +129,48 @@ export const series: Series[] = [
     slug: 'sport',
     title: 'Sport',
     description:
-      'Athletic presence, the open court and the last light of the day. A basketball concept exploring the meeting point of sport and style.',
+      'Athletic presence, the open court and the last light of the day.  ',
     cover: sport,
     images: [
       sport,
 
       {src: '/images/realsport6.png', alt: 'Muiz in athletic wear on an outdoor court, image 6'},
       {src: '/images/realsport7.png', alt: 'Muiz in athletic wear on an outdoor court, image 7'},
-
-      {src: '/images/realsport8.png', alt: 'Muiz in athletic wear on an outdoor court, image 8'},
-      {src: '/images/realsport9.png', alt: 'Muiz in athletic wear on an outdoor court, image 9'},
-            {src: '/images/realsport10.png', alt: 'Muiz in athletic wear on an outdoor court, image 10'},
+      {src: '/images/realsport12.png', alt: 'Muiz in athletic wear on an outdoor court, image 8'},
+      {src: '/images/realsport13.png', alt: 'Muiz in athletic wear on an outdoor court, image 9'},
+      {src: '/images/realsport9.png', alt: 'Muiz in athletic wear on an outdoor court, image 10'},
+      
 
     ],
   },
+
+
+
   {
-    slug: 'character-studies',
-    title: 'Character Studies',
-    description:
-      'Expressive styling and cinematic character work.  ',
-     cover: character,
-    images: [
-      character,
-      {src: '/images/realjoker1.png', alt: 'Muiz in joker character study, image 2'},
-    {src: '/images/realjoker2.png', alt: 'Muiz in joker character study, image 2'},
-      {src: '/images/realjoker3.png', alt: 'Muiz in joker character study, image 3'},
-
-      {src: '/images/realjoker5.png', alt: 'Muiz in joker character study, image 5'},
-      {src: '/images/realjoker6.png', alt: 'Muiz in joker character study, image 6'},
-      {src: '/images/realjoker7.png', alt: 'Muiz in joker character study, image 7'},
-      {src: '/images/realjoker8.png', alt: 'Muiz in joker character study, image 8'},
-      {src: '/images/realjoker9.png', alt: 'Muiz in joker character study, image 9'},
+    slug: 'characters',
+    title: 'Characters',
+    description: 'Expressive styling and cinematic character work.',
+    cover: character,
+    images: [...jokerImages, ...priestImages],
+    collections: [
+      {
+        slug: 'joker',
+        title: 'The Joker',
+        description: 'Purple velvet, smoke and a deck of cards.',
+        cover: character,
+        images: jokerImages,
+      },
+      {
+        slug: 'priest',
+        title: 'Mea Culpa',
+        description: 'Swagger, smoke and a long, honest prayer.',
+        cover: priestImages[0],
+        images: priestImages,
+      },
     ],
   },
+
+
   {
     slug: 'fashion-editorial',
     title: 'Fashion & Editorial',
