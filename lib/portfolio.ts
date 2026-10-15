@@ -36,7 +36,7 @@ export const beauty: Photo = {
 };
 
 export const character: Photo = {
-  src: '/images/latestjoker3.png',
+  src: '/images/storyjoker3.png',
   alt: 'Muiz holding a playing card in purple and green character styling',
 };
 
@@ -74,16 +74,14 @@ const sport: Photo = {
 };
 
 
-
 const jokerImages: Photo[] = [
-  character,
-    {src: '/images/latestjoker1.png', alt: 'Muiz as the Joker, image 10'},
-      {src: '/images/realjoker9.png', alt: 'Muiz as the Joker, image 9'},
-      {src: '/images/realjoker2.png', alt: 'Muiz as the Joker, image 3'},
-        {src: '/images/realjoker7.png', alt: 'Muiz as the Joker, image 7'},
-      
-
-
+  {src: '/images/storyjoker1.png', alt: 'Muiz as the Joker, in a dressing room holding a mask'},
+  {src: '/images/storyjoker2.png', alt: 'Muiz as the Joker, image 2'},
+  {src: '/images/storyjoker3.png', alt: 'Muiz as the Joker, image 3'},
+  {src: '/images/storyjoker4.png', alt: 'Muiz as the Joker, image 4'},
+  {src: '/images/storyjoker5.png', alt: 'Muiz as the Joker, image 5'},
+  {src: '/images/storyjoker6.png', alt: 'Muiz as the Joker, image 6'},
+  {src: '/images/storyjoker7.png', alt: 'Muiz as the Joker, image 7'},
 ];
 
 const priestImages: Photo[] = [
@@ -93,7 +91,6 @@ const priestImages: Photo[] = [
   {src: '/images/rebelpriest2.png', alt: 'Muiz as the Priest, image 5'},
   {src: '/images/rebelpriest3.png', alt: 'Muiz as the Priest, image 6'},
   {src: '/images/rebelpriest4.png', alt: 'Muiz as the Priest, image 7'},
-  {src: '/images/rebelpriest5.png', alt: 'Muiz as the Priest, image 8'},
 
 ];
 
@@ -155,8 +152,8 @@ export const series: Series[] = [
     collections: [
       {
         slug: 'joker',
-        title: 'The Joker',
-        description: 'Purple velvet, smoke and a deck of cards.',
+        title: 'After the Act',
+        description: 'Who is left when the laughing stops?',
         cover: character,
         images: jokerImages,
       },
