@@ -4,15 +4,17 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Photo } from '@/lib/portfolio';
+import ShareButton from '@/components/ShareButton';
 
 type Props = {
   photos: Photo[];
+  shareTitle: string;
   nextHref?: string;
 };
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
-export default function StoryViewer({ photos, nextHref }: Props) {
+export default function StoryViewer({ photos, shareTitle, nextHref }: Props) {
   const [i, setI] = useState(0);
   const total = photos.length;
   const current = photos[i];
@@ -92,6 +94,10 @@ export default function StoryViewer({ photos, nextHref }: Props) {
               →
             </button>
           )}
+          <ShareButton
+            image={current.src}
+            text={`${shareTitle}: a character story by Muiz`}
+          />
         </div>
       </div>
     </section>

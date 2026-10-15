@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Photo from '@/components/Photo';
+import GalleryViewer from '@/components/GalleryViewer';
 import { series } from '@/lib/portfolio';
 import { site } from '@/lib/site';
 
@@ -79,27 +80,12 @@ export default async function SeriesPage({
         ← All selected work
       </Link>
 
-      <header className="page-heading">
-<p className="eyebrow">Selected stories</p>
-        <h1>{item.title}</h1>
-        <p>{item.description}</p>
-      </header>
-
-      <div
-        className={`series-gallery ${item.images.length === 1 ? 'single' : ''}`}
-      >
-        {item.images.map((photo, i) => (
-          <div
-            className="series-photo"
-            key={i}
-          >
-            <Photo
-              photo={photo}
-              priority={i === 0}
-            />
-          </div>
-        ))}
-      </div>
+      <GalleryViewer
+        photos={item.images}
+        eyebrow="Selected stories"
+        title={item.title}
+        description={item.description}
+      />
 
       <div className="series-end">
         <Link href={`/work/${next.slug}`}>
