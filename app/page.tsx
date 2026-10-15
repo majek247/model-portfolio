@@ -20,7 +20,7 @@ export default function Home() {
         <div className="hero-shade" />
         <div className="hero-copy">
           <p className="eyebrow">
-            Model
+            Model | Visual Storyteller
           </p>
           <h1 id="hero-heading">
             Presence,
