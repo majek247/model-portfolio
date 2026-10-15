@@ -1,13 +1,16 @@
 export type Photo = {
   src: string;
   alt: string;
+  title?: string;
+  caption?: string;
   crop?: [number, number, number, number];
 };
 
- export type Collection = {
+export type Collection = {
   slug: string;
   title: string;
   description: string;
+  story?: string;
   cover: Photo;
   images: Photo[];
 };
@@ -75,23 +78,23 @@ const sport: Photo = {
 
 
 const jokerImages: Photo[] = [
-  {src: '/images/storyjoker1.png', alt: 'Muiz as the Joker, in a dressing room holding a mask'},
-  {src: '/images/storyjoker2.png', alt: 'Muiz as the Joker, image 2'},
-  {src: '/images/storyjoker3.png', alt: 'Muiz as the Joker, image 3'},
-  {src: '/images/storyjoker4.png', alt: 'Muiz as the Joker, image 4'},
-  {src: '/images/storyjoker5.png', alt: 'Muiz as the Joker, image 5'},
-  {src: '/images/storyjoker6.png', alt: 'Muiz as the Joker, image 6'},
-  {src: '/images/storyjoker7.png', alt: 'Muiz as the Joker, image 7'},
+  {src: '/images/storyjoker1.png', alt: 'Muiz as the Joker, holding a mask to his face', title: 'The Mask', caption: 'Everyone saw the performance. This is where it starts to slip.'},
+  {src: '/images/storyjoker2.png', alt: 'Muiz as the Joker, looking down at the mask in his hand', title: 'The Pause', caption: 'The room is quiet now. The applause stays in his head.'},
+  {src: '/images/storyjoker3.png', alt: 'Muiz as the Joker, seated with a stained cloth', title: 'The Cloth', caption: 'Each wipe takes off a little more of someone else.'},
+  {src: '/images/storyjoker4.png', alt: 'Close-up of Muiz in smeared Joker makeup', title: 'The Truth', caption: 'Without the paint, there is nothing left to hide behind.'},
+  {src: '/images/storyjoker5.png', alt: 'Muiz wiping off Joker makeup', title: 'The Stranger', caption: 'He wore the face for so long the real one feels unfamiliar.'},
+  {src: '/images/storyjoker6.png', alt: 'Muiz wiping his face in a dressing-room mirror', title: 'The Mirror', caption: 'Nobody is watching now, so he finally looks.'},
+  {src: '/images/storyjoker7.png', alt: 'Muiz reclined in a green shirt, hand on his head', title: 'The Weight', caption: 'Being the joke is exhausting work.'},
 ];
 
-const priestImages: Photo[] = [
-  {src: '/images/priest2.png', alt: 'Muiz as the Priest, image 2'},
-  {src: '/images/priest3.png', alt: 'Muiz as the Priest, image 3'},
-  {src: '/images/rebelpriest1.png', alt: 'Muiz as the Priest, image 4'},
-  {src: '/images/rebelpriest2.png', alt: 'Muiz as the Priest, image 5'},
-  {src: '/images/rebelpriest3.png', alt: 'Muiz as the Priest, image 6'},
-  {src: '/images/rebelpriest4.png', alt: 'Muiz as the Priest, image 7'},
 
+const priestImages: Photo[] = [
+  {src: '/images/priest2.png', alt: 'Muiz as a priest in black robes, seated on a chair', title: 'The Rebel', caption: 'He wears the collar like a dare.'},
+  {src: '/images/priest3.png', alt: 'Muiz as a priest, smoking', title: 'The Vice', caption: 'Some sins he doesn\'t bother to hide.'},
+  {src: '/images/rebelpriest1.png', alt: 'Muiz as a priest, crying with a rosary', title: 'The Crack', caption: 'Then, in the quiet, the swagger gives out.'},
+  {src: '/images/rebelpriest2.png', alt: 'Muiz as a priest, resting his head on a church pew', title: 'The Burden', caption: 'Faith doesn\'t feel lighter when you\'re the one carrying it.'},
+  {src: '/images/rebelpriest3.png', alt: 'Muiz as a priest, hands clasped in prayer', title: 'The Plea', caption: 'No performance now. Just a man asking to be heard.'},
+  {src: '/images/rebelpriest4.png', alt: 'Muiz as a priest, kissing his rosary', title: 'The Vow', caption: 'Not forgiven yet. But finally honest.'},
 ];
 
 export const series: Series[] = [
@@ -152,6 +155,7 @@ export const series: Series[] = [
     collections: [
       {
         slug: 'joker',
+       story: 'Every performance ends. The harder part is who you are once the lights go down and nobody is watching.',
         title: 'After the Act',
         description: 'Who is left when the laughing stops?',
         cover: character,
@@ -159,6 +163,7 @@ export const series: Series[] = [
       },
       {
         slug: 'priest',
+              story: 'Defiance is easy in daylight. This is what remains when the swagger runs out and all that is left is the confession.',
         title: 'Mea Culpa',
         description: 'Swagger, smoke and a long, honest prayer.',
         cover: priestImages[0],

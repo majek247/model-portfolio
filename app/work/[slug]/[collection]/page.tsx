@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import Photo from '@/components/Photo';
+import StoryViewer from '@/components/StoryViewer';
 import { series } from '@/lib/portfolio';
 
 export function generateStaticParams() {
@@ -37,7 +37,8 @@ export default async function CollectionPage({
   if (!parent || !item) notFound();
 
   const list = parent.collections!;
-  const next = list[(list.indexOf(item) + 1) % list.length];
+  const index = list.indexOf(item);
+  const next = list[(index + 1) % list.length];
 
   return (
     <main id="main" className="shell inner">
@@ -45,26 +46,19 @@ export default async function CollectionPage({
         ← {parent.title}
       </Link>
 
-      <header className="page-heading">
-        <p className="eyebrow">{parent.title}</p>
+      <header className="page-heading compact">
+        <p className="eyebrow">Character {String(index + 1).padStart(2, '0')}</p>
         <h1>{item.title}</h1>
         <p>{item.description}</p>
       </header>
 
-      <div className={`series-gallery ${item.images.length === 1 ? 'single' : ''}`}>
-        {item.images.map((photo, i) => (
-          <div className="series-photo" key={i}>
-            <Photo photo={photo} priority={i === 0} />
-          </div>
-        ))}
-      </div>
+      <StoryViewer
+        photos={item.images}
+        nextHref={next !== item ? `/work/${parent.slug}/${next.slug}` : undefined}
+      />
 
       <div className="series-end">
-        {next !== item && (
-          <Link href={`/work/${parent.slug}/${next.slug}`}>
-            Next concept: {next.title} ↗
-          </Link>
-        )}
+        <Link href={`/work/${parent.slug}`}>All characters</Link>
         <Link href="/#booking">Enquire about a shoot →</Link>
       </div>
     </main>
