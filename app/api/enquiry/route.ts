@@ -7,6 +7,11 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const error = (message: string, status: number) =>
   NextResponse.json({ error: message }, { status });
 
+// Slack treats &, < and > as control characters. Escaping them stops visitors
+// from injecting mentions (<!channel>) or links into your notification.
+const slackEscape = (value: string) =>
+  value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
 export async function POST(request: Request) {
   // Same-origin browser requests only. Configure rate limiting at your host
   // for production; an in-memory counter does not protect distributed deployments.
@@ -79,46 +84,87 @@ export async function POST(request: Request) {
     return error('Please enter a valid email address.', 400);
   }
 
-  const { RESEND_API_KEY, ENQUIRY_TO, ENQUIRY_FROM } = process.env;
+  const { RESEND_API_KEY, ENQUIRY_TO, ENQUIRY_FROM, SLACK_WEBHOOK_URL } =
+    process.env;
 
-  if (!RESEND_API_KEY || !ENQUIRY_TO || !ENQUIRY_FROM) {
+  const emailConfigured = Boolean(RESEND_API_KEY && ENQUIRY_TO && ENQUIRY_FROM);
+  const slackConfigured = Boolean(
+    SLACK_WEBHOOK_URL?.startsWith('https://hooks.slack.com/')
+  );
+
+  if (!emailConfigured && !slackConfigured) {
     return error(
       'Online enquiries are not available yet. Please try again later.',
       503
     );
   }
 
-  try {
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: ENQUIRY_FROM,
-        to: [ENQUIRY_TO],
-        reply_to: values.email,
-        subject: `New MUIZ enquiry: ${values.name.replace(/[\r\n]+/g, ' ')}`,
-        text: fields
-          .map((key) => `${key.toUpperCase()}\n${values[key]}`)
-          .join('\n\n'),
-      }),
-      signal: AbortSignal.timeout(12000),
-    });
+  const sendEmail = async (): Promise<boolean> => {
+    if (!emailConfigured) return false;
 
-    if (!response.ok) {
-      return error(
-        'Your message could not be delivered. Please try again later.',
-        502
-      );
+    try {
+      const response = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${RESEND_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: ENQUIRY_FROM,
+          to: [ENQUIRY_TO],
+          reply_to: values.email,
+          subject: `New MUIZ enquiry: ${values.name.replace(/[\r\n]+/g, ' ')}`,
+          text: fields
+            .map((key) => `${key.toUpperCase()}\n${values[key]}`)
+            .join('\n\n'),
+        }),
+        signal: AbortSignal.timeout(12000),
+      });
+
+      return response.ok;
+    } catch {
+      return false;
     }
+  };
 
-    return NextResponse.json({ ok: true });
-  } catch {
+  const sendSlack = async (): Promise<boolean> => {
+    if (!slackConfigured) return false;
+
+    try {
+      const text = [
+        '*New MUIZ enquiry*',
+        `*Name:* ${slackEscape(values.name)}`,
+        `*Email:* ${slackEscape(values.email)}`,
+        `*Location:* ${slackEscape(values.location)}`,
+        `*Budget:* ${slackEscape(values.budget)}`,
+        `*Usage:* ${slackEscape(values.usage)}`,
+        `*Project:*\n${slackEscape(values.project)}`,
+      ].join('\n');
+
+      const response = await fetch(SLACK_WEBHOOK_URL as string, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text }),
+        signal: AbortSignal.timeout(8000),
+      });
+
+      return response.ok;
+    } catch {
+      return false;
+    }
+  };
+
+  // Send both at the same time. Each one catches its own errors, so a Slack
+  // outage never blocks the email and an email outage never blocks Slack.
+  const [emailOk, slackOk] = await Promise.all([sendEmail(), sendSlack()]);
+
+  // The visitor sees success if at least one channel reached you.
+  if (!emailOk && !slackOk) {
     return error(
-      'The email service is temporarily unavailable. Please try again later.',
+      'Your message could not be delivered. Please try again later.',
       502
     );
   }
+
+  return NextResponse.json({ ok: true });
 }
