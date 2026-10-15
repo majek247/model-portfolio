@@ -1,7 +1,7 @@
 export const site = {
   name: 'MUIZ',
-  title: 'MUIZ | Model & Visual Storyteller',
-  description: 'A portfolio of tailoring, movement and expressive character work. Fashion, beauty, sport and Nigerian heritage.',
+  title: 'Muiz Thomas | Male Model & Visual Storyteller',
+  description: 'Explore Muiz Thomas’s modelling portfolio, featuring fashion editorials, portraits and character concepts. Get in touch for bookings and collaborations.',
   availability: 'Open for enquiries',
 rate: 'Day rate from £600',
   rateNote: 'Usage, exclusivity, travel and production quoted separately.',

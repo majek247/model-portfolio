@@ -108,26 +108,26 @@ export default function Home() {
             <div className="comp-grid">
               <figure>
                 <div className="comp-shot">
-                  <Photo photo={{ src: '/images/newcomp1.png', alt: 'Headshot of Muiz' }} />
+                  <Photo photo={{ src: '/images/rawdigi1.png', alt: 'Headshot of Muiz' }} />
                 </div>
                 <figcaption>01 / Headshot</figcaption>
               </figure>
               <figure>
                 <div className="comp-shot">
-                  <Photo photo={{ src: '/images/newcomp2.png', alt: 'Side profile of Muiz' }} />
+                  <Photo photo={{ src: '/images/rawdigi2.png', alt: 'Side profile of Muiz' }} />
                 </div>
                 <figcaption>02 / Side profile</figcaption>
               </figure>
               <figure>
                 <div className="comp-shot">
-                  <Photo photo={{ src: '/images/newcomp3.png', alt: 'Waist-up portrait of Muiz' }} />
+                  <Photo photo={{ src: '/images/rawdigi3.png', alt: 'Waist-up portrait of Muiz' }} />
                 </div>
                 <figcaption>03 / Waist-up</figcaption>
               </figure>
               <figure>
-                <div className="comp-shot">
-                  <Photo photo={{ src: '/images/newcomp4.png', alt: 'Full-length portrait of Muiz' }} />
-                </div>
+           <div className="comp-shot comp-shot-full">
+  <Photo photo={{ src: '/images/rawdigi4.png', alt: 'Full-length portrait of Muiz' }} />
+</div>
                 <figcaption>04 / Full length</figcaption>
               </figure>
             </div>

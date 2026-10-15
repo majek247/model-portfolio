@@ -22,6 +22,8 @@ export type Series = {
   slug: string;
   title: string;
   description: string;
+  seoTitle?: string;
+  seoDescription?: string;
   cover: Photo;
   images: Photo[];
   collections?: Collection[];
@@ -78,6 +80,18 @@ const sport: Photo = {
   src: '/images/realsport1.png',
   alt: 'Muiz holding a basketball on an outdoor court at sunset',
 };
+
+const basketballImages: Photo[] = [
+  sport, // image 1
+  {src: '/images/realsport12.png', alt: 'Muiz in athletic wear on a basketball court at sunset, image 2'}, // image 4
+  {src: '/images/realsport13.png', alt: 'Muiz in athletic wear on a basketball court at sunset, image 3'}, // image 5
+  {src: '/images/realsport9.png', alt: 'Muiz in athletic wear on a basketball court at sunset, image 4'}, // image 6
+];
+
+const tennisImages: Photo[] = [
+  {src: '/images/realsport6.png', alt: 'Muiz in athletic wear on a tennis court, image 1'}, // image 2
+  {src: '/images/realsport7.png', alt: 'Muiz in athletic wear on a tennis court, image 2'}, // image 3
+];
 
 
 const jokerImages: Photo[] = [
@@ -192,10 +206,14 @@ const catImages: Photo[] = [
 
 export const series: Series[] = [
   {
-    slug: 'nigerian-heritage',
-    title: 'Nigerian Heritage',
+slug: 'nigerian-heritage',
+title: 'Nigerian Heritage',
+seoTitle: 'Nigerian Agbada & Traditional Fashion Model | Muiz Thomas',
+seoDescription:
+  'Explore Muiz Thomas’s Nigerian fashion portfolio, featuring embroidered agbada, matching fila and contemporary traditional styling. Enquire about bookings.',
     description:
       'Traditional silhouettes, intricate embroidery and a contemporary point of view. ',
+
     cover: emerald,
     images: [
       emerald,
@@ -206,10 +224,13 @@ export const series: Series[] = [
     ],
   },
   {
-    slug: 'beauty-grooming',
-    title: 'Beauty & Grooming',
+slug: 'beauty-grooming',
+title: 'Beauty & Grooming',
+seoTitle: 'Male Beauty & Grooming Model Portfolio | Muiz Thomas',
+seoDescription:
+  'View Muiz Thomas’s male beauty and grooming portfolio, featuring skincare portraits, close-up photography and natural skin texture. Enquire about bookings.',
     description:
-      'Close studies of skin, light and expression.  ',
+      'Care, patience, and a little glow.  ',
     cover: beauty,
     images: [
       beauty,
@@ -218,30 +239,50 @@ export const series: Series[] = [
       {src: '/images/realskin4.png', alt: 'Muiz in a skincare and grooming portrait, image 4'},
     ],
   },
+
+
   {
     slug: 'sport',
     title: 'Sport',
-    description:
-      'Athletic presence, the open court and the last light of the day.  ',
+    seoTitle: 'Male Sports Model, Basketball & Tennis Portfolio | Muiz Thomas',
+    seoDescription:
+      'Explore Muiz Thomas’s sports modelling portfolio, featuring basketball and tennis campaigns, athletic wear and outdoor court photography. Enquire about bookings.',
+    description: 'A little sweat. A little swagger. Always up for a game.',
     cover: sport,
-    images: [
-      sport,
-
-      {src: '/images/realsport6.png', alt: 'Muiz in athletic wear on an outdoor court, image 6'},
-      {src: '/images/realsport7.png', alt: 'Muiz in athletic wear on an outdoor court, image 7'},
-      {src: '/images/realsport12.png', alt: 'Muiz in athletic wear on an outdoor court, image 8'},
-      {src: '/images/realsport13.png', alt: 'Muiz in athletic wear on an outdoor court, image 9'},
-      {src: '/images/realsport9.png', alt: 'Muiz in athletic wear on an outdoor court, image 10'},
-      
-
+    images: [...basketballImages, ...tennisImages],
+    collections: [
+      {
+        slug: 'basketball',
+        title: 'Fit Check, Then Hoops.',
+        description: 'They told me to look athletic. So I brought a basketball.',
+        seoTitle: 'Male Basketball Model Photoshoot | Muiz Thomas',
+        seoDescription:
+          'Basketball photoshoot featuring Muiz Thomas in athletic wear on an outdoor court at sunset, with the city skyline behind him. Enquire about sports bookings.',
+        layout: 'gallery',
+        cover: sport,
+        images: basketballImages,
+      },
+      {
+        slug: 'tennis',
+        title: 'A Little Court Appeal',
+        description: 'A few good shots. Some of them even involved tennis.',
+        seoTitle: 'Male Tennis Model Photoshoot | Muiz Thomas',
+        seoDescription:
+          'Tennis photoshoot featuring Muiz Thomas in athletic wear on court. Clean sportswear imagery for brands and campaigns. Get in touch for sports modelling bookings.',
+        layout: 'gallery',
+        cover: tennisImages[0],
+        images: tennisImages,
+      },
     ],
   },
 
 
-
   {
-    slug: 'characters',
-    title: 'Characters',
+slug: 'characters',
+title: 'Characters',
+seoTitle: 'Character & Creative Male Model Photoshoots | Muiz Thomas',
+seoDescription:
+  'Discover Muiz Thomas’s character modelling portfolio, from Joker-inspired portraits to a rebellious priest series. Explore expressive styling and visual stories.',
     description: 'Expressive styling and cinematic character work.',
     cover: character,
     images: [...jokerImages, ...priestImages],
@@ -275,8 +316,11 @@ export const series: Series[] = [
   },
 
   {
-    slug: 'fashion-editorial',
-    title: 'Fashion & Editorial',
+slug: 'fashion-editorial',
+title: 'Fashion & Editorial',
+seoTitle: 'Male Fashion & Editorial Model Portfolio | Muiz Thomas',
+seoDescription:
+  'Explore Muiz Thomas’s fashion and editorial modelling portfolio, featuring black tailoring, statement silhouettes and creative concepts. Enquire about bookings.',
     description: 'Black tailoring, sculptural furniture and considered stillness.',
     cover: fashion,
     images: [...chessImages, ...catImages],
@@ -290,8 +334,11 @@ export const series: Series[] = [
         images: chessImages,
       },
       {
-        slug: 'cat',
-        title: 'Even Confidence Has a Soft Side.',
+slug: 'cat',
+title: 'Even Confidence Has a Soft Side.',
+seoTitle: 'Black Tailoring & Cat Fashion Editorial | Muiz Thomas',
+seoDescription:
+  'Explore Muiz Thomas’s fashion editorial with a black cat, pairing sharp black tailoring with relaxed poses and playful moments in a sunlit interior.',
         description: 'Sharp clothes, easy affection, and a little room for mischief.',
         layout: 'gallery',
         cover: catImages[0],

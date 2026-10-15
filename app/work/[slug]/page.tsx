@@ -17,9 +17,13 @@ export async function generateMetadata({
   const { slug } = await params;
   const item = series.find((s) => s.slug === slug);
 
+  if (!item) notFound();
+
   return {
-    title: item?.title ?? 'Series not found',
-    description: item?.description,
+    title: {
+      absolute: item.seoTitle ?? `${item.title} | Muiz Thomas`,
+    },
+    description: item.seoDescription ?? item.description,
   };
 }
 

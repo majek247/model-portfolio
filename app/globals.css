@@ -990,10 +990,9 @@ img {
 }
 
 .page-heading {
-  padding: 60px 0 50px;
+  padding: 60px 0 40px;
   max-width: 1000px;
 }
-
 .page-heading h1 {
   font: 400 clamp(55px, 8vw, 120px)/.95 var(--serif);
   letter-spacing: -.045em;
@@ -1870,12 +1869,15 @@ body:has(.hero) .header nav {
   }
 }
 
+
 .collection-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 32px;
-  margin-top: 48px;
+  margin-top: 0;
 }
+
+
 .collection-card {
   display: block;
   color: inherit;
@@ -2219,4 +2221,23 @@ body:has(.hero) .header nav {
 @media (max-width: 900px) {
   .gal-info { padding-bottom: 0; }
   .gal-share { position: static; margin-top: 32px; }
+}
+
+
+
+/* Matching portrait proportions keep all four frames aligned */
+.comp-grid .comp-shot {
+  aspect-ratio: 2 / 3;
+  height: auto !important;
+}
+
+.comp-shot.comp-shot-full img {
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+
+
+/* Match the surrounding page background */
+.booking {
+  background: transparent !important;
 }
