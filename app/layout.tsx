@@ -7,6 +7,7 @@ import '@fontsource/inter/500.css';
 import './globals.css';
 
 import Header from '@/components/Header';
+import HeaderScroll from '@/components/HeaderScroll';
 import Footer from '@/components/Footer';
 import { site, siteUrl } from '@/lib/site';
 
@@ -53,6 +54,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <Header />
+        <HeaderScroll />
         {children}
         <Footer />
       </body>

@@ -2245,3 +2245,87 @@ body:has(.hero) .header nav {
 .booking {
   background: transparent !important;
 }
+
+/* ============================================================
+   STICKY NAVIGATION
+   Transparent over the hero, solid ink once past it
+   ============================================================ */
+
+.header,
+body:has(.hero) .header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: background-color .3s ease;
+}
+
+html[data-nav-solid="true"] .header,
+html[data-nav-solid="true"] body:has(.hero) .header {
+  background: var(--ink);
+}
+
+/* Divider line: visible over the hero, hidden once the nav is solid */
+body:has(.hero) .header::after {
+  transition: opacity .3s ease;
+}
+
+html[data-nav-solid="true"] body:has(.hero) .header::after {
+  opacity: 0;
+}
+
+/* Keep anchor links (#work, #about, #booking) from hiding under the bar */
+html {
+  scroll-padding-top: 104px;
+}
+
+@media (max-width: 700px) {
+  html {
+    scroll-padding-top: 84px;
+  }
+}
+
+/* ============================================================
+   ACTIVE NAV LINK
+   Underline draws in from the left; text gains weight
+   ============================================================ */
+
+.header nav a,
+.header .header-enquire {
+  position: relative;
+}
+
+.header nav a::after,
+.header .header-enquire::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 7px;
+  height: 1px;
+  background: currentColor;
+  opacity: 1;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .55s cubic-bezier(.22, .61, .36, 1);
+  pointer-events: none;
+}
+
+/* Hover preview */
+.header nav a:hover::after,
+.header .header-enquire:hover::after {
+  transform: scaleX(1);
+}
+
+/* Active section */
+html[data-section="work"] .header a[href$="#work"],
+html[data-section="about"] .header a[href$="#about"],
+html[data-section="booking"] .header a[href$="#booking"] {
+  -webkit-text-stroke: .35px currentColor;
+  opacity: 1;
+}
+
+html[data-section="work"] .header a[href$="#work"]::after,
+html[data-section="about"] .header a[href$="#about"]::after,
+html[data-section="booking"] .header a[href$="#booking"]::after {
+  transform: scaleX(1);
+}
