@@ -194,15 +194,19 @@ const chessImages: Photo[] = [
   {src: '/images/chess10.png', alt: 'Muiz in black tailoring at a chessboard, image 10'},
 ];
 
+
+
 const catImages: Photo[] = [
-  {src: '/images/blackcat1.png', alt: 'Muiz in black tailoring with a black cat, image 1'},
-  {src: '/images/blackcat2.png', alt: 'Muiz in black tailoring with a black cat, image 2'},
-  {src: '/images/blackcat3.png', alt: 'Muiz in black tailoring with a black cat, image 3'},
-  {src: '/images/blackcat4.png', alt: 'Muiz in black tailoring with a black cat, image 4'},
-  {src: '/images/blackcat5.png', alt: 'Muiz in black tailoring with a black cat, image 5'},
-  {src: '/images/blackcat6.png', alt: 'Muiz in black tailoring with a black cat, image 6'},
-  {src: '/images/blackcat7.png', alt: 'Muiz in black tailoring with a black cat, image 7'},
+  {src: '/images/newcat1.png', alt: 'Muiz in black tailoring with a black cat, image 1'},
+  {src: '/images/newcat2.png', alt: 'Muiz in black tailoring with a black cat, image 2'},
+  {src: '/images/newcat3.png', alt: 'Muiz in black tailoring with a black cat, image 3'},
+  {src: '/images/newcat4.png', alt: 'Muiz in black tailoring with a black cat, image 4'},
+  {src: '/images/newcat5.png', alt: 'Muiz in black tailoring with a black cat, image 5'},
+  {src: '/images/newcat6.png', alt: 'Muiz in black tailoring with a black cat, image 5'},
 ];
+
+
+
 
 export const series: Series[] = [
   {
