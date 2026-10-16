@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import ArticleShare from './ArticleShare';
+import InstagramBanner from './InstagramBanner';
 
 type TocItem = { id: string; label: string };
 
@@ -110,6 +111,7 @@ export default function PostLayout({
 
         <div className="post-content">
           <div ref={bodyRef} className="post-body prose">{children}</div>
+          <InstagramBanner />
         </div>
       </div>
     </main>

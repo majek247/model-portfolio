@@ -2432,3 +2432,26 @@ html[data-section="booking"] .header a[href$="#booking"]::after {
   font-size: clamp(3rem, 6vw, 5.75rem);
 }
 .post-hero-inner { max-width: 1000px; }
+
+
+/* ===== Instagram banner (end of every post) ===== */
+.ig-banner { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 2rem; margin-top: 4rem; padding: 2.25rem 2.5rem; border: 1px solid rgba(255,255,255,0.14); border-radius: 18px; color: var(--paper); transition: border-color .25s, background .25s; }
+.ig-banner:hover { border-color: rgba(255,255,255,0.4); background: rgba(238,233,221,0.03); }
+.ig-label { font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; line-height: 1.9; opacity: 0.55; padding-right: 2rem; border-right: 1px solid rgba(255,255,255,0.18); margin: 0; }
+.ig-title { font: 400 clamp(2rem, 3.4vw, 3.4rem)/1 var(--serif); letter-spacing: -.02em; margin: 0 0 1rem; }
+.ig-sub { font-size: 0.78rem; letter-spacing: 0.24em; text-transform: uppercase; opacity: 0.7; margin: 0; white-space: nowrap; }
+.ig-sub i { font-style: normal; margin: 0 0.7em; opacity: 0.6; }
+.ig-handle { padding-left: 2rem; border-left: 1px solid rgba(255,255,255,0.18); }
+.ig-handle-row { display: flex; align-items: center; gap: 1rem; color: #d9b48f; }
+.ig-name { font-size: 1.35rem; letter-spacing: .01em; }
+.ig-arrow { font-size: 1.8rem; line-height: 1; transition: transform .25s; }
+.ig-banner:hover .ig-arrow { transform: translateX(6px); }
+.ig-connect { font-size: 0.7rem; letter-spacing: 0.26em; text-transform: uppercase; opacity: 0.7; margin: 0.9rem 0 0; }
+
+@media (max-width: 900px) {
+  .ig-banner { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.75rem; }
+  .ig-label { border-right: 0; padding-right: 0; }
+  .ig-handle { border-left: 0; padding-left: 0; }
+}
+
+@media (max-width: 600px) { .ig-sub { white-space: normal; } }
