@@ -2362,7 +2362,7 @@ html[data-section="booking"] .header a[href$="#booking"]::after {
 .post-body img { max-width: 100%; height: auto; }
 .post-figure { margin: 2.25rem 0; }
 .post-figure img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: center 25%; }
-.post-caption { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6; margin-top: 0.75rem; }
+.post-caption { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6; margin-top: 0.4rem; text-align: center; }
 .post-body table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 0.9rem; }
 .post-body th, .post-body td { text-align: left; padding: 0.7rem 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.15); vertical-align: top; }
 
@@ -2422,3 +2422,13 @@ html[data-section="booking"] .header a[href$="#booking"]::after {
   .post-content { padding-left: 0; }
   .post-body.prose { font-size: 17px; }
 }
+
+/* post hero title: same serif as the homepage headings */
+.post-hero h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -.045em;
+  line-height: .95;
+  font-size: clamp(3rem, 6vw, 5.75rem);
+}
+.post-hero-inner { max-width: 1000px; }

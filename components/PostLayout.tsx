@@ -58,7 +58,7 @@ export default function PostLayout({
     );
     heads.forEach((h) => io.observe(h));
     return () => io.disconnect();
-  }, [readTime]);
+  }, [readTime, children]);
 
   return (
     <main id="main" className="post-page">
@@ -84,7 +84,21 @@ export default function PostLayout({
             <ol className="post-toc">
               {toc.map((t, i) => (
                 <li key={t.id}>
-                  <a href={`#${t.id}`} className={active === t.id ? 'is-active' : undefined}>
+                  <a
+                    href={`#${t.id}`}
+                    className={active === t.id ? 'is-active' : undefined}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const el =
+                        document.getElementById(t.id) ??
+                        bodyRef.current?.querySelectorAll<HTMLElement>('h2')[i];
+                      if (!el) return;
+                      const top = el.getBoundingClientRect().top + window.scrollY - 110;
+                      window.scrollTo({ top, behavior: 'smooth' });
+                      history.replaceState(null, '', `#${t.id}`);
+                      setActive(t.id);
+                    }}
+                  >
                     {i + 1}. {t.label}
                   </a>
                 </li>
