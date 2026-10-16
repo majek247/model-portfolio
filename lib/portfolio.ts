@@ -206,7 +206,20 @@ const catImages: Photo[] = [
 ];
 
 
+const skinImages: Photo[] = [
+  beauty, // realskin1
+  {src: '/images/realskin2.png', alt: 'Muiz in a skincare and grooming portrait, image 2'},
+  {src: '/images/realskin3.png', alt: 'Muiz in a skincare and grooming portrait, image 3'},
+  {src: '/images/realskin4.png', alt: 'Muiz in a skincare and grooming portrait, image 4'},
+];
 
+const hairImages: Photo[] = [
+  {src: '/images/hairgroom1.png', alt: 'Muiz in a hair grooming portrait, image 1'},
+  {src: '/images/hairgroom2.png', alt: 'Muiz in a hair grooming portrait, image 2'},
+  {src: '/images/hairgroom3.png', alt: 'Muiz in a hair grooming portrait, image 3'},
+  {src: '/images/hairgroom4.png', alt: 'Muiz in a hair grooming portrait, image 4'},
+  {src: '/images/hairgroom5.png', alt: 'Muiz in a hair grooming portrait, image 5'},
+];
 
 export const series: Series[] = [
   {
@@ -227,24 +240,41 @@ seoDescription:
       {src: '/images/realagbada6.png', alt: 'Muiz in a traditional Nigerian agbada, image 6'},
     ],
   },
+
   {
-slug: 'beauty-grooming',
-title: 'Beauty & Grooming',
-seoTitle: 'Male Beauty & Grooming Model Portfolio | Muiz Thomas',
-seoDescription:
-  'View Muiz Thomas’s male beauty and grooming portfolio, featuring skincare portraits, close-up photography and natural skin texture. Enquire about bookings.',
-    description:
-      'Care, patience, and a little glow.  ',
+    slug: 'beauty-grooming',
+    title: 'Beauty & Grooming',
+    seoTitle: 'Male Beauty & Grooming Model Portfolio | Muiz Thomas',
+    seoDescription:
+      'View Muiz Thomas’s male beauty and grooming portfolio, featuring skincare portraits, hair grooming and close-up photography. Enquire about bookings.',
+    description: 'Care, patience, and a little glow.',
     cover: beauty,
-    images: [
-      beauty,
-      {src: '/images/realskin2.png', alt: 'Muiz in a skincare and grooming portrait, image 2'},
-      {src: '/images/realskin3.png', alt: 'Muiz in a skincare and grooming portrait, image 3'},
-      {src: '/images/realskin4.png', alt: 'Muiz in a skincare and grooming portrait, image 4'},
+    images: [...skinImages, ...hairImages],
+    collections: [
+      {
+        slug: 'skincare',
+        title: 'A Little Facetime.',
+        description: 'Clean hands, a little cream, and a moment to myself.',
+        seoTitle: 'Male Skincare Model Photoshoot | Muiz Thomas',
+        seoDescription:
+          'Skincare photoshoot featuring Muiz Thomas in close-up beauty portraits with natural skin texture and soft light. Enquire about beauty and skincare bookings.',
+        layout: 'gallery',
+        cover: beauty,
+        images: skinImages,
+      },
+      {
+        slug: 'hair-grooming',
+        title: 'Take It From the Top.',
+        description: 'Wash, shave, oil. A grooming ritual worth taking your time over.',
+        seoTitle: 'Male Hair & Grooming Model Photoshoot | Muiz Thomas',
+        seoDescription:
+          'Hair and grooming photoshoot featuring Muiz Thomas, with clean cuts, sharp lines and polished finishes. Enquire about hair and grooming bookings.',
+        layout: 'gallery',
+        cover: hairImages[0],
+        images: hairImages,
+      },
     ],
   },
-
-
   {
     slug: 'sport',
     title: 'Sport',
