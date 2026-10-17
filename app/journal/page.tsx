@@ -3,27 +3,20 @@ import {getPosts} from '@/lib/posts';
 
 export const metadata = {
   title: 'Journal',
-  description: 'Notes on image-making, style and the work behind the frame.'
+  description: 'A few thoughts on the industry, the awkward bits of booking, and what really happens on set.'
 };
 
 export default function Journal() {
-  const posts = [
-    ...getPosts(),
-    {
-      slug: 'how-to-hire-a-male-model',
-      title: 'How to Hire a Male Model: What Happens After You Send an Enquiry, Step by Step',
-      date: '2026-10-16',
-     excerpt: 'A male model\'s honest walkthrough of the booking process: enquiry, creative brief, usage rights, quote, confirmation, prep, shoot day and delivery.',
-      body: ''
-    }
-  ].sort((a, b) => b.date.localeCompare(a.date));
+const posts = getPosts();
 
   return (
     <main id="main" className="shell inner journal">
       <header className="page-heading">
         <p className="eyebrow">Notes & perspectives</p>
-        <h1>Beyond the frame.</h1>
-        <p>Notes on image-making, style and the work behind the frame.</p>
+        <h1>While We’re Here.</h1>
+<p style={{ maxWidth: '1500px !important' } as React.CSSProperties}>
+  A few thoughts on the industry, the awkward bits of booking, and what really happens on set.
+</p>
       </header>
 
       {posts.length ? (

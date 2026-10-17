@@ -24,6 +24,7 @@ export default function Header() {
       <nav aria-label="Main navigation">
         <Link href="/#work">Portfolio</Link>
         <Link href="/#about">Profile</Link>
+          <Link href="/journal">Journal</Link>
       </nav>
 
       <Link className="header-enquire" href="/#booking">

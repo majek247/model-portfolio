@@ -2339,7 +2339,7 @@ html[data-section="booking"] .header a[href$="#booking"]::after {
 .post-eyebrow { display: inline-block; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.85; margin-bottom: 1rem; }
 .post-meta { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.7; margin: 0 0 1.25rem; }
 .post-hero h1 { font-size: clamp(2.4rem, 5.2vw, 4.75rem); line-height: 1.05; font-weight: 400; margin: 0 0 1.5rem; }
-.post-excerpt { max-width: 560px; font-size: 1rem; line-height: 1.6; opacity: 0.85; margin: 0; }
+.post-excerpt { max-width: 750px; font-size: 1.2rem; line-height: 1.6; opacity: 0.85; margin: 0; }
 
 .post-layout { display: grid; grid-template-columns: 300px minmax(0, 1fr); padding: 0 var(--post-pad); }
 .post-side { border-right: 1px solid rgba(255,255,255,0.12); padding: 3rem 2rem 3rem 0; }
@@ -2363,7 +2363,16 @@ html[data-section="booking"] .header a[href$="#booking"]::after {
 .post-figure { margin: 2.25rem 0; }
 .post-figure img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: center 25%; }
 .post-caption { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6; margin-top: 0.4rem; text-align: center; }
-.post-body table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 0.9rem; }
+
+.post-body table { 
+  width: 100%; 
+  min-width: 520px; 
+  border-collapse: collapse; 
+  font-size: inherit; 
+}
+
+
+
 .post-body th, .post-body td { text-align: left; padding: 0.7rem 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.15); vertical-align: top; }
 
 @media (max-width: 900px) {

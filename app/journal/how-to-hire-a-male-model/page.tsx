@@ -3,9 +3,9 @@ import PostLayout from '@/components/PostLayout';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
-const TITLE = 'How to Hire a Male Model: What Happens After You Send an Enquiry.';
+const TITLE = 'How to Hire a Male Model: What Happens on My Side of the Booking';
 const DESCRIPTION =
-  'A step-by-step walkthrough of the booking process: enquiry, creative brief, usage rights, quote, confirmation, prep, shoot day and delivery.';
+  'The references, questions and practical details I like to settle before shoot day, plus what happens once we’re there and after everyone packs up.';
 const DATE = '2026-10-16';
 
 // Shown in Google and the browser tab. The hero keeps TITLE / DESCRIPTION above.

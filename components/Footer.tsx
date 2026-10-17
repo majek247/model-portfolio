@@ -11,7 +11,7 @@ export default function Footer() {
 
         <nav aria-label="Footer navigation">
           <Link href="/#work">Work</Link>
-          <Link href="/#about">About</Link>
+          <Link href="/#about">Profile</Link>
           <Link href="/#booking">Booking</Link>
           <Link href="/journal">Journal</Link>
         </nav>
