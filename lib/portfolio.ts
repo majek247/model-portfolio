@@ -148,13 +148,13 @@ const priestImages: Photo[] = [
     caption: 'He leans back and pulls at his collar, meeting every imagined accusation with the same look. Nobody is getting an apology.',
   },
   {
-    src: '/images/priest3.png',
+    src: '/images/latestpriest2.png',
     alt: 'Muiz as a priest, smoking',
     title: 'Still Not Sorry',
     caption: 'Against the wall, he takes another drag and holds his stare. The cigarette gives him something to do besides explain himself.',
   },
   {
-    src: '/images/rebelpriest1.png',
+    src: '/images/latestpriest3.png',
     alt: 'Muiz as a priest, crying with a rosary',
     title: 'Now It Hurts',
     caption: 'The hand that held the cigarette now grips a rosary. He bows into it, unable to keep his face from crumpling.',
@@ -164,12 +164,6 @@ const priestImages: Photo[] = [
     alt: 'Muiz as a priest, resting his head on a church pew',
     title: 'Stay A While',
     caption: 'Bent over the worn pew, he lets the rosary hang. There is nobody to impress, and no strength left for pretending.',
-  },
-  {
-    src: '/images/rebelpriest3.png',
-    alt: 'Muiz as a priest, hands clasped in prayer',
-    title: 'Hear Me Out',
-    caption: 'He looks up with wet eyes, both hands closed around the rosary. Whatever he asks now, he leaves his excuses out.',
   },
   {
     src: '/images/rebelpriest4.png',
